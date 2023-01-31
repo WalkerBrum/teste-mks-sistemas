@@ -3,7 +3,7 @@ import React from 'react';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { ResetCSS } from './shared/global/ResetCSS';
+import { ResetCSS } from './shared/global/resetCSS';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

@@ -1,4 +1,4 @@
-import { Home } from './pages/Home';
+import { Home } from './pages';
 import { Header, Footer } from './shared/components';
 import { Wrapper } from './styled';
 
