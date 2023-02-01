@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react';
 import { apiProducts } from '../../shared/services/Axios';
+import { CardProducts } from './Card/CardProducts';
 
 
-import { Wrapper, Card} from './styled';
+import { Wrapper} from './styled';
 
 export interface IHomeProps {
-    count: number;
-    products: [];
+    count?: number;
+    photo: string;
+    name: string;
+    description: string;
+    price: string;
+    id: string;
 }
 
 export const Home = () => {
@@ -15,31 +20,27 @@ export const Home = () => {
 
     useEffect(() => {
         setIsLoading(true);
-
-        const getData = async() => {
-            try {
-                const data = await apiProducts.listProducts();
-                const json = await data.json();
-
-            } catch(error) {  
-                console.log(error.message);
-            };
-        }
-        
-        // apiProducts.listProducts()
-        //     .then(({ data }) => {
-        //         const json = data.json();
-        //         setProducts(json);
-        //         console.log(products);     
-        //     })
-        //     .catch(error => console.log(error.message));
+       
+        apiProducts.listProducts()
+            .then((result) => {
+                setProducts(result.data.products);
+                console.log(products);     
+            })
+            .catch(error => console.log(error.message));
     }, []);
+
 
     return (
         <Wrapper>
-            <Card>
-
-            </Card>
+            {products.map((product) =>
+                <CardProducts
+                    name={product.name}
+                    photo={product.photo}
+                    description={product.description}
+                    price={product.price}
+                    key={product.id}
+                />
+            )}           
         </Wrapper>
     );
 };
