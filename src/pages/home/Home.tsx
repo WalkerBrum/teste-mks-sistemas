@@ -37,7 +37,7 @@ export const Home = () => {
                     name={product.name}
                     photo={product.photo}
                     description={product.description}
-                    price={product.price}
+                    price={product.price.slice(0, 3)}
                     key={product.id}
                 />
             )}           

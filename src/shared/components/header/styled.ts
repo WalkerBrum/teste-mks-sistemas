@@ -39,6 +39,7 @@ export const WrapperCart = styled.div`
     height: 45px;
     background: #FFFFFF;
     border-radius: 8px;
+    margin-right: 88px;
 
     display: flex;
     justify-content: space-evenly;

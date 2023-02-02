@@ -10,6 +10,7 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 
 
     &:hover {
@@ -22,11 +23,7 @@ export const Card = styled.div`
         padding: 14px;
     }
 
-    div {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-    }
+ 
 `;
 
 export const Image = styled.img`
@@ -37,8 +34,9 @@ export const Image = styled.img`
 
 export const Wrapper = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 10px;
+    padding: 0 14px 0 11.56px;
 `;
 
 export const TitleProduct = styled.h3`
@@ -58,7 +56,11 @@ export const PriceProduct = styled.span`
     font-weight: 700;
     font-size: 15px;
     line-height: 15px;
-    padding 4px 6px 4px 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 26px;
 `;
 
 export const Description = styled.p`
@@ -68,5 +70,19 @@ export const Description = styled.p`
     font-size: 10px;
     line-height: 12px;
     margin: 8px 14px 12px 14px;
+`;
+
+export const ButtonBuy = styled.button`
+    background: #0F52BA;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    border-radius: 0px 0px 8px 8px;
+    padding: 7px 0 10.91px 0;
 `;
 

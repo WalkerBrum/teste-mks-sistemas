@@ -1,4 +1,4 @@
-import { Card, Description, Image, PriceProduct, TitleProduct, Wrapper } from './styled';
+import { ButtonBuy, Card, Description, Image, PriceProduct, TitleProduct, Wrapper } from './styled';
 
 interface ICardProducts {
     name: string;
@@ -18,7 +18,7 @@ export const CardProducts: React.FC<ICardProducts> = (props) => {
                 <PriceProduct>R${price}</PriceProduct>
             </Wrapper>
             <Description>{description}</Description>
-            <button>Comprar</button>
+            <ButtonBuy>COMPRAR</ButtonBuy>
         </Card>
     );
 };
