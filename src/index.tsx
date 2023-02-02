@@ -2,6 +2,8 @@ import ReactDOM from 'react-dom/client';
 import React from 'react';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from './shared/context/store';
 
 import { ResetCSS } from './shared/global/resetCSS';
 
@@ -10,8 +12,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <ResetCSS />
-        <App />
+        <Provider store={store}>
+            <ResetCSS />
+            <App />
+        </Provider>
     </React.StrictMode>
 );
 

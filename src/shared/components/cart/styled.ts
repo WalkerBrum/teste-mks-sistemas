@@ -9,7 +9,7 @@ export const CarOverlay = styled.div`
     left: 0;
     top: 0;
     z-index: 99;
-    transition: all .5s ease;
+    transition: all 5s ease;
 `;
 
 export const CartOpened = styled.div`
@@ -19,14 +19,13 @@ export const CartOpened = styled.div`
     background: #0F52BA;
     top: 0;
     right: 0;
-    transition: all .5s ease;
+    transition: all 5s ease;
     overflow-x: auto;
     z-index: 100;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
-    outline: solid 3px #14AE5C;
 `;
 
 export const CartClosed = styled.div`
@@ -36,7 +35,7 @@ export const CartClosed = styled.div`
     background-color: white;
     top: 0;
     right: -1500px;
-    transition: all .5s ease;
+    transition: all 5s ease;
 `;
 
 export const Wrapper = styled.div`

@@ -1,22 +1,22 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { cartClose, cartOpen } from '../../context/store';
+import { cartClose, StoreState } from '../../context/store';
 
 import { CarOverlay, CartClosed, CartOpened, CloseButton, FinishedBuyButton, Title, Wrapper } from './styled';
 import { CartItem } from './cart-item/CartItem';
 
 
-export const Cart = () => {
-    const open = useSelector(state => state.cart.value);
-
+export const Cart: React.FC = () => {
+    const { open } = useSelector((state: StoreState) => state.cart);
+    const dispatch = useDispatch(); 
 
     return (
         <>
-            {/* <CarOverlay></CarOverlay> */}
+            {open && <CarOverlay />}
             {open ? 
                 <CartOpened>
                     <Wrapper>
                         <Title>Carrinho de Compras</Title>
-                        <CloseButton>X</CloseButton>
+                        <CloseButton onClick={() => dispatch(cartClose())}>X</CloseButton>
                     </Wrapper>
                     <CartItem />
                     <Wrapper>

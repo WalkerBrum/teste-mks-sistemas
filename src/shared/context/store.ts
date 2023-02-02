@@ -1,5 +1,5 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
-import React from 'react';
+
 
 interface ICounterStateProps {
     open: boolean;
@@ -8,12 +8,12 @@ interface ICounterStateProps {
 }
 
 const initialState: ICounterStateProps = {
-    open: false,
+    open: true,
     items: [],
     total: 0,
 };
 
-export const counterSlice = createSlice({
+export const CounterSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
@@ -26,10 +26,14 @@ export const counterSlice = createSlice({
     }
 });
 
-export const { cartOpen, cartClose } = counterSlice.actions;
+export const { cartOpen, cartClose } = CounterSlice.actions;
 
-export default configureStore({
+const store = configureStore({
     reducer: {
-        cart: counterSlice.reducer,
+        cart: CounterSlice.reducer,
     }
 });
+
+export type StoreState = ReturnType<typeof store.getState>
+
+export default store;

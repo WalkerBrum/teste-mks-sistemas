@@ -1,4 +1,7 @@
+import { useDispatch } from 'react-redux';
+
 import { ButtonBuy, Card, Description, Image, PriceProduct, TitleProduct, Wrapper } from './styled';
+import { cartOpen } from '../../../shared/context/store';
 
 interface ICardProducts {
     name: string;
@@ -10,6 +13,14 @@ interface ICardProducts {
 export const CardProducts: React.FC<ICardProducts> = (props) => {
     const {name, photo, description, price} = props;
 
+    const dispatch = useDispatch();
+
+    const buyProduct = (e: any) => {
+        e.stopPropagation();
+
+        dispatch(cartOpen());
+    };
+
     return (
         <Card>
             <Image src={photo} />
@@ -18,7 +29,7 @@ export const CardProducts: React.FC<ICardProducts> = (props) => {
                 <PriceProduct>R${price}</PriceProduct>
             </Wrapper>
             <Description>{description}</Description>
-            <ButtonBuy>COMPRAR</ButtonBuy>
+            <ButtonBuy onClick={buyProduct}>COMPRAR</ButtonBuy>
         </Card>
     );
 };

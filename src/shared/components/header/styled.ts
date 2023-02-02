@@ -35,6 +35,7 @@ export const TitleSecond = styled.p`
 `;
 
 export const WrapperCart = styled.div`
+    cursor: pointer;
     width: 90px;
     height: 45px;
     background: #FFFFFF;
