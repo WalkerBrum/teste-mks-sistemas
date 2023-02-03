@@ -87,6 +87,28 @@ export const FinishedBuyButton = styled.div`
     cursor: pointer;
 `;
 
+export const DeleteProductButton = styled.button`
+    position: absolute;
+    left: 10;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background: #000000;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 
 
 

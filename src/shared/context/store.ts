@@ -10,8 +10,9 @@ interface ICounterStateProps {
 interface ICardProducts {
     name: string;
     photo: string;
-    price: string;
+    price: number;
     id: number;
+    qnty: number;
 }
 
 const initialState: ICounterStateProps = {
@@ -30,8 +31,8 @@ export const CounterSlice = createSlice({
         cartClose: state => {
             state.open = false;
         },
-        addToCart: (state: any, action) => {
-            const hasProductAdd = state.items.findIndex((product: any) => product.id === action.payload.id);
+        addToCart: (state, action) => {
+            const hasProductAdd = state.items.findIndex((product) => product.id === action.payload.id);
 
             if (hasProductAdd > -1) {
                 state.items[hasProductAdd].qnty += 1;
@@ -43,10 +44,33 @@ export const CounterSlice = createSlice({
                 });
             }
         },
+        cartValueTotal: state => {
+            state.total = state.items.reduce((acumulador, product) => acumulador + product.price * product.qnty, 0);
+        },
+        moreQnty: (state, action) => {
+            state.items.map((product) => {
+
+                if (product.id === action.payload) {
+                    product.qnty += 1;
+                }
+
+                return product;
+            });
+        },
+        lessQnty: (state, action) => {
+            state.items.map((product) => {
+
+                if (product.id === action.payload && product.qnty > 1) {
+                    product.qnty -= 1;      
+                }
+
+                return product;
+            });
+        },
     }
 });
 
-export const { cartOpen, cartClose, addToCart } = CounterSlice.actions;
+export const { cartOpen, cartClose, addToCart, cartValueTotal, moreQnty, lessQnty } = CounterSlice.actions;
 
 const store = configureStore({
     reducer: {

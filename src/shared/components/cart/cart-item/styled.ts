@@ -92,19 +92,3 @@ export const PriceProduct = styled.p`
     line-height: 17px;
 `;
 
-export const CloseButton = styled.span`
-    left: 95.32%;
-    right: 0%;
-    top: 0.99%;
-    bottom: 81.19%;
-
-    background: #000000;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-`;

@@ -1,16 +1,16 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { cartClose, StoreState } from '../../context/store';
 
-import { CarOverlay, CartClosed, CartOpened, CloseButton, FinishedBuyButton, Title, Wrapper } from './styled';
 import { CartItem } from './cart-item/CartItem';
+import { cartClose, StoreState } from '../../context/store';
+import { CarOverlay, CartClosed, CartOpened, CloseButton, FinishedBuyButton, Title, Wrapper } from './styled';
+
 
 
 export const Cart: React.FC = () => {
-    const { items: products, open } = useSelector((state: StoreState) => state.cart);
+    const { items: products, open, total } = useSelector((state: StoreState) => state.cart);
 
-    const dispatch = useDispatch(); 
-
-    console.log(products);
+    const dispatch = useDispatch();
+    console.log(products); 
 
     return (
         <>
@@ -21,17 +21,19 @@ export const Cart: React.FC = () => {
                         <Title>Carrinho de Compras</Title>
                         <CloseButton onClick={() => dispatch(cartClose())}>X</CloseButton>
                     </Wrapper>
-                    {products.map(product => 
+                    {products.map((product, index) => 
                         <CartItem 
-                            key={product.id}
+                            key={index}
                             name={product.name}
                             photo={product.photo}
                             price={product.price}
+                            qnty={product.qnty}
+                            id={product.id}
                         />)}
                     
                     <Wrapper>
                         <Title>Total:</Title>
-                        <Title>R$798</Title>
+                        <Title>R${total}</Title>
                     </Wrapper>
                     <FinishedBuyButton>Finalizar Compra</FinishedBuyButton>
                 </CartOpened> : <CartClosed />
