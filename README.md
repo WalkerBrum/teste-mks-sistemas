@@ -29,7 +29,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 `npm install`
 
 ## **Clone do Projeto**
-`git clone https://github.com/WalkerBrum/pokeloja-react.git`
+`git clone https://github.com/WalkerBrum/teste-mks-sistemas.git`
 
 ## **Autor e Agradecimento**
 Eu Walker Lobato como desenvolvedor do projeto sou grato por poder participar desse desafio, pois foi uma grande oportunidade para o desenvolvimento das minhas hard skills, aprimorando os meus conhecimentos na construção de aplicações web.
