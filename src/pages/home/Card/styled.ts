@@ -16,17 +16,9 @@ export const Card = styled.div`
     &:hover {
         outline: solid 3px #9747FF;
     }
-
-    img {
-        width: 111px;
-        height: 138px;
-        padding: 14px;
-    }
-
- 
 `;
 
-export const Image = styled.img`
+export const ImageProduct = styled.img`
     width: 111px;
     height: 138px;
     padding: 14px;

@@ -6,8 +6,11 @@ import { CartItem } from './cart-item/CartItem';
 
 
 export const Cart: React.FC = () => {
-    const { open } = useSelector((state: StoreState) => state.cart);
+    const { items: products, open } = useSelector((state: StoreState) => state.cart);
+
     const dispatch = useDispatch(); 
+
+    console.log(products);
 
     return (
         <>
@@ -18,7 +21,14 @@ export const Cart: React.FC = () => {
                         <Title>Carrinho de Compras</Title>
                         <CloseButton onClick={() => dispatch(cartClose())}>X</CloseButton>
                     </Wrapper>
-                    <CartItem />
+                    {products.map(product => 
+                        <CartItem 
+                            key={product.id}
+                            name={product.name}
+                            photo={product.photo}
+                            price={product.price}
+                        />)}
+                    
                     <Wrapper>
                         <Title>Total:</Title>
                         <Title>R$798</Title>

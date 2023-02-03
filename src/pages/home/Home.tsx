@@ -6,12 +6,11 @@ import { CardProducts } from './Card/CardProducts';
 import { Wrapper} from './styled';
 
 export interface IHomeProps {
-    count?: number;
     photo: string;
     name: string;
     description: string;
     price: string;
-    id: string;
+    id: number;
 }
 
 export const Home = () => {
@@ -39,6 +38,7 @@ export const Home = () => {
                     description={product.description}
                     price={product.price.slice(0, 3)}
                     key={product.id}
+                    id={product.id}
                 />
             )}           
         </Wrapper>

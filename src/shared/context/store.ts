@@ -3,8 +3,15 @@ import { configureStore, createSlice } from '@reduxjs/toolkit';
 
 interface ICounterStateProps {
     open: boolean;
-    items: [];
+    items: ICardProducts[];
     total: number;
+}
+
+interface ICardProducts {
+    name: string;
+    photo: string;
+    price: string;
+    id: number;
 }
 
 const initialState: ICounterStateProps = {
@@ -23,10 +30,23 @@ export const CounterSlice = createSlice({
         cartClose: state => {
             state.open = false;
         },
+        addToCart: (state: any, action) => {
+            const hasProductAdd = state.items.findIndex((product: any) => product.id === action.payload.id);
+
+            if (hasProductAdd > -1) {
+                state.items[hasProductAdd].qnty += 1;
+
+            } else {
+                state.items.push({
+                    qnty: 1,
+                    ...action.payload,
+                });
+            }
+        },
     }
 });
 
-export const { cartOpen, cartClose } = CounterSlice.actions;
+export const { cartOpen, cartClose, addToCart } = CounterSlice.actions;
 
 const store = configureStore({
     reducer: {
