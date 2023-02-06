@@ -1,6 +1,8 @@
 import { useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
-import { ButtonBuy, Card, Description, ImageProduct, PriceProduct, TitleProduct, Wrapper } from './styled';
+import { ButtonBuy, Card, Description, ImageProduct, PriceProduct, TextButtonBuy, TitleProduct, Wrapper } from './styled';
 import { cartOpen, addToCart, cartValueTotal } from '../../../shared/context/store';
 
 interface ICardProducts {
@@ -38,7 +40,12 @@ export const CardProducts: React.FC<ICardProducts> = (props) => {
                 <PriceProduct>R${price}</PriceProduct>
             </Wrapper>
             <Description>{description}</Description>
-            <ButtonBuy onClick={buyProduct}>COMPRAR</ButtonBuy>
+            <ButtonBuy onClick={buyProduct}>
+                <FontAwesomeIcon 
+                    icon={faBagShopping}
+                />
+                <TextButtonBuy>COMPRAR</TextButtonBuy>
+            </ButtonBuy>
         </Card>
     );
 };

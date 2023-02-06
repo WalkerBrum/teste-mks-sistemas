@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { CartItem } from './cart-item/CartItem';
 import { cartClose, StoreState } from '../../context/store';
-import { CarOverlay, CartClosed, CartOpened, CloseButton, FinishedBuyButton, Title, ValueInformationCart, Wrapper, WrapperTotalValue, WrapperHeaderCart } from './styled';
+import { CarOverlay, CartClosed, CartOpened, CloseButton, FinishedBuyButton, Title, ValueInformationCart, Wrapper, WrapperTotalValue, WrapperHeaderCart, CartEmpty } from './styled';
 
 
 
@@ -21,6 +21,7 @@ export const Cart: React.FC = () => {
                         <Title>Carrinho de Compras</Title>
                         <CloseButton onClick={() => dispatch(cartClose())}>X</CloseButton>
                     </WrapperHeaderCart>
+                    {products.length === 0 && <CartEmpty>Carrinho Vazio</CartEmpty>}
                     {products.map((product, index) => 
                         <CartItem 
                             key={index}

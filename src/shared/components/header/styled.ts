@@ -48,6 +48,7 @@ export const WrapperCart = styled.div`
 `;
 
 export const SpamCart = styled.span`
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;

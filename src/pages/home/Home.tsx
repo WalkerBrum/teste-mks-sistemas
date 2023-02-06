@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { apiProducts } from '../../shared/services/Axios';
 import { CardProducts } from './Card/CardProducts';
+import { Loading, Wrapper } from './styled';
 
-
-import { Wrapper} from './styled';
 
 export interface IHomeProps {
     photo: string;
@@ -22,8 +21,8 @@ export const Home = () => {
        
         apiProducts.listProducts()
             .then((result) => {
-                setProducts(result.data.products);
-                console.log(products);     
+                setIsLoading(false);
+                setProducts(result.data.products);   
             })
             .catch(error => console.log(error.message));
     }, []);
@@ -31,16 +30,21 @@ export const Home = () => {
 
     return (
         <Wrapper>
-            {products.map((product) =>
-                <CardProducts
-                    name={product.name}
-                    photo={product.photo}
-                    description={product.description}
-                    price={product.price.slice(0, 3)}
-                    key={product.id}
-                    id={product.id}
-                />
-            )}           
+            {isLoading 
+                ?
+                <Loading>CARREGANDO</Loading>
+                :
+                products.map((product) =>
+                    <CardProducts
+                        name={product.name}
+                        photo={product.photo}
+                        description={product.description}
+                        price={product.price.slice(0, 3)}
+                        key={product.id}
+                        id={product.id}
+                    />)   
+            }
+           
         </Wrapper>
     );
 };

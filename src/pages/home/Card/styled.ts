@@ -68,7 +68,10 @@ export const ButtonBuy = styled.button`
     background: #0F52BA;
     color: white;
     width: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
@@ -76,5 +79,13 @@ export const ButtonBuy = styled.button`
     line-height: 18px;
     border-radius: 0px 0px 8px 8px;
     padding: 7px 0 10.91px 0;
+`;
+
+export const TextButtonBuy = styled.span`
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
 `;
 

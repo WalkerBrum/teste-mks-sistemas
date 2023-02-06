@@ -26,6 +26,10 @@ export const CartOpened = styled.div`
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
+
+    @media (max-width: 700px) {
+        width: 100%
+    }
 `;
 
 export const CartClosed = styled.div`
@@ -106,6 +110,16 @@ export const FinishedBuyButton = styled.div`
     cursor: pointer;
 `;
 
+export const CartEmpty = styled.h2`
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size:  28px;
+    Line height: 19px;
+    letter-spacing: 2px;
+    color: white;
+    text-align: center;
+`;
 
 
 
