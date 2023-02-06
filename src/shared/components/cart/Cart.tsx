@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { CartItem } from './cart-item/CartItem';
 import { cartClose, StoreState } from '../../context/store';
-import { CarOverlay, CartClosed, CartOpened, CloseButton, FinishedBuyButton, Title, Wrapper } from './styled';
+import { CarOverlay, CartClosed, CartOpened, CloseButton, FinishedBuyButton, Title, ValueInformationCart, Wrapper, WrapperTotalValue, WrapperHeaderCart } from './styled';
 
 
 
@@ -17,10 +17,10 @@ export const Cart: React.FC = () => {
             {open && <CarOverlay />}
             {open ? 
                 <CartOpened>
-                    <Wrapper>
+                    <WrapperHeaderCart>
                         <Title>Carrinho de Compras</Title>
                         <CloseButton onClick={() => dispatch(cartClose())}>X</CloseButton>
-                    </Wrapper>
+                    </WrapperHeaderCart>
                     {products.map((product, index) => 
                         <CartItem 
                             key={index}
@@ -30,12 +30,13 @@ export const Cart: React.FC = () => {
                             qnty={product.qnty}
                             id={product.id}
                         />)}
-                    
                     <Wrapper>
-                        <Title>Total:</Title>
-                        <Title>R${total}</Title>
+                        <WrapperTotalValue>
+                            <ValueInformationCart>Total:</ValueInformationCart>
+                            <ValueInformationCart>R${total}</ValueInformationCart>
+                        </WrapperTotalValue>
+                        <FinishedBuyButton>Finalizar Compra</FinishedBuyButton>
                     </Wrapper>
-                    <FinishedBuyButton>Finalizar Compra</FinishedBuyButton>
                 </CartOpened> : <CartClosed />
             }
         </>

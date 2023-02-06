@@ -38,10 +38,20 @@ export const CartClosed = styled.div`
     transition: all 5s ease;
 `;
 
-export const Wrapper = styled.div`
+export const WrapperTotalValue = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin: 36px 63px 42px 47px;  
+`;
+
+export const WrapperHeaderCart = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 36px 22px 70px 47px;  
+`;
+
+export const Wrapper= styled.div`
+    margin: 0;
 `;
 
 export const Title = styled.h2`
@@ -53,6 +63,15 @@ export const Title = styled.h2`
     width: 180px;
     height: 56px;
     color: #FFFFFF;
+`;
+
+export const ValueInformationCart = styled.h3`
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 15px;
+    color: white;
 `;
 
 export const CloseButton = styled.button`
@@ -87,27 +106,6 @@ export const FinishedBuyButton = styled.div`
     cursor: pointer;
 `;
 
-export const DeleteProductButton = styled.button`
-    position: absolute;
-    left: 10;
-    right: 0;
-    top: 0;
-    bottom: 0;
-
-    background: #000000;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`;
 
 
 

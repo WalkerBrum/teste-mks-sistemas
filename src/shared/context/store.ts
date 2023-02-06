@@ -16,7 +16,7 @@ interface ICardProducts {
 }
 
 const initialState: ICounterStateProps = {
-    open: true,
+    open: false,
     items: [],
     total: 0,
 };
@@ -67,10 +67,18 @@ export const CounterSlice = createSlice({
                 return product;
             });
         },
+        deleteToCart: (state, action) => {
+            for (let i = 0; i < state.items.length; i++) {
+
+                if (state.items[i].id === action.payload) {
+                    state.items.splice(i, 1);
+                }
+            }
+        },
     }
 });
 
-export const { cartOpen, cartClose, addToCart, cartValueTotal, moreQnty, lessQnty } = CounterSlice.actions;
+export const { cartOpen, cartClose, addToCart, cartValueTotal, moreQnty, lessQnty, deleteToCart } = CounterSlice.actions;
 
 const store = configureStore({
     reducer: {

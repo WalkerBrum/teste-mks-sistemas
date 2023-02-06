@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { lessQnty, moreQnty, cartValueTotal } from '../../../context/store';
-import { ButtonMoreLessQtd, ImageProduct, InformationQtd, PriceProduct, SpanQtd, TitleProduct, WrapperItem, WrapperQtd } from './styled';
+import { lessQnty, moreQnty, cartValueTotal, deleteToCart } from '../../../context/store';
+import { ButtonMoreLessQtd, DeleteProductButton, ImageProduct, InformationQtd, PriceProduct, SpanQtd, TitleProduct, WrapperItem, WrapperQtd } from './styled';
 
 
 interface ICartItemProps {
@@ -22,13 +22,13 @@ export const CartItem: React.FC<ICartItemProps> = (props) => {
     };
 
     const moreQntyProduct = () => {
-        console.log(id);
         dispatch(moreQnty(id));
         dispatch(cartValueTotal());
     };
     
     return (
         <WrapperItem>
+            <DeleteProductButton onClick={() => dispatch(deleteToCart(id))}>x</DeleteProductButton>
             <ImageProduct src={photo}/>
             <TitleProduct>{name}</TitleProduct>
             <SpanQtd>Qtd:</SpanQtd>

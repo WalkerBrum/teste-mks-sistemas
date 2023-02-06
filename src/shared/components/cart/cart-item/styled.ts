@@ -9,6 +9,7 @@ export const WrapperItem = styled.div`
     box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     margin-left: 47px;
+    margin-bottom: 28px;
     padding: 19px 23px;
     display: flex;
     justify-content: space-between;
@@ -91,4 +92,27 @@ export const PriceProduct = styled.p`
     font-size: 14px;
     line-height: 17px;
 `;
+
+export const DeleteProductButton = styled.button`
+    position: absolute;
+    left: 96.62%;
+    right: 1.3%;
+    top: -7%;
+    bottom: 83.17%;
+
+    background: #000000;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 
