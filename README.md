@@ -6,7 +6,14 @@ Aplicação front-end que simula um e-commerce para compras de produtos, usando 
 <hr>
 
 ## **Objetivos**
-- Criar aplicação com ReactJs utilizando Redux, Styled Components, Typescript e API de [Products](https://mks-challenge-api-frontend.herokuapp.com/api-docs/);
+- Criar aplicação com ReactJs utilizando Redux, Styled Components, Typescript e a API de [Products](https://mks-challenge-api-frontend.herokuapp.com/api-docs/);
+
+<hr>
+
+## **Acessar Aplicação**
+[https://teste-mks-sistemas.vercel.app/](https://teste-mks-sistemas.vercel.app/)
+
+<hr>
 
 ## **Tecnologias**
 Este projeto foi desenvolvido com as seguintes tecnologias: 
